@@ -17,10 +17,12 @@ def test_main_1():
     lines = captureOut.getvalue().split('\n')
     print(lines)
 
-    ret = main.main()
+    mylist = [5, 10, 15, 25, 20, 55, 40]
+    ret = main.gtRight(mylist)
+    print(f'Return value is {ret}')
+    assert isinstance(ret, list)
     assert len(ret) == 2
-    assert ret[0] == 25
-    assert ret[1] == 55
+    assert ret == [25, 55]
 
     # regex_string = r'[\w,\W]*1'
     # regex_string += r'[\w,\W]*3'
@@ -30,3 +32,12 @@ def test_main_1():
     # res = re.search(regex_string, main.evenlist)
     # assert res != None
     # print(res.group())
+
+
+def test_main_2():
+    mylist = [1, 2, 3, 4, 5]
+    ret = main.gtRight(mylist)
+    print(f'Return value is {ret}')
+    assert isinstance(ret, list)
+    assert len(ret) == 0
+    assert ret == []
